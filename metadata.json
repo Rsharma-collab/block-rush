@@ -1,0 +1,6 @@
+{
+  "name": "Block Rush",
+  "description": "A Minecraft-inspired 3-lane endless runner with block building, G-Core collection, power-ups, and dynamic world events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
