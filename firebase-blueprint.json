@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Global leaderboard entry storing player run performance and statistics",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID of the player who submitted the record",
+          "maxLength": 128
+        },
+        "playerName": {
+          "type": "string",
+          "description": "Player's chosen runner name",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "score": {
+          "type": "number",
+          "description": "Total score reached"
+        },
+        "distance": {
+          "type": "number",
+          "description": "Distance traveled in meters"
+        },
+        "gCores": {
+          "type": "number",
+          "description": "Total G-Cores collected in the run"
+        },
+        "maxCombo": {
+          "type": "number",
+          "description": "Maximum combo multiplier attained"
+        },
+        "eventsSurvived": {
+          "type": "number",
+          "description": "Number of world events survived"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "Voxel avatar character key",
+          "maxLength": 32
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of submission",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "userId",
+        "playerName",
+        "score",
+        "distance",
+        "gCores",
+        "maxCombo",
+        "eventsSurvived",
+        "avatar",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/leaderboard/{entryId}": {
+      "schema": {
+        "$ref": "#/entities/LeaderboardEntry"
+      },
+      "description": "Global competitive scores leaderboard"
+    }
+  }
+}

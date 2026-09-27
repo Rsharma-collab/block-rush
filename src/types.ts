@@ -43,4 +43,5 @@ export interface HighScoreRecord {
   gCores: number;
   maxCombo: number;
   date: string;
+  playerName?: string;
 }

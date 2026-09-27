@@ -6,7 +6,7 @@ import { GameOverModal } from './components/GameOverModal';
 import { PauseModal } from './components/PauseModal';
 import { SettingsModal } from './components/SettingsModal';
 import { HowToPlayModal } from './components/HowToPlayModal';
-import { HighScoreModal } from './components/HighScoreModal';
+import { LeaderboardModal } from './components/LeaderboardModal';
 import { BiomeType, GameSettings, GameState, HighScoreRecord, PlayerStats, WorldEventType } from './types';
 import { GameEngine } from './game/GameEngine';
 import { sound } from './audio/SoundSystem';
@@ -249,12 +249,13 @@ export default function App() {
           isNewRecord={isNewRecord}
           onPlayAgain={handleRestart}
           onMainMenu={handleMainMenu}
+          onOpenLeaderboard={() => setShowHighScores(true)}
         />
       )}
 
-      {/* High Scores Modal */}
+      {/* Global & Personal Leaderboard Modal */}
       {showHighScores && (
-        <HighScoreModal
+        <LeaderboardModal
           records={highScores}
           onClose={() => setShowHighScores(false)}
           onClearRecords={handleClearRecords}
